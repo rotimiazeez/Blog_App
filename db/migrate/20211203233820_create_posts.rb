@@ -10,7 +10,6 @@ class CreatePosts < ActiveRecord::Migration[6.1]
       t.timestamps
     end
 
-    add_column :posts, :author_id, :bigint
     add_foreign_key :posts, :users, column: :author_id
     add_index :posts, :author_id
   end
