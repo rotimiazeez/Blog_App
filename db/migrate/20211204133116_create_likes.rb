@@ -2,7 +2,7 @@ class CreateLikes < ActiveRecord::Migration[6.1]
   def change
     create_table :likes do |t|
       t.bigint :author_id
-      t.bigin :post_id
+      t.bigint :post_id
 
       t.timestamps
     end
