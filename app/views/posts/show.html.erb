@@ -1,1 +1,15 @@
-<h1>Here is the post for the user.</h1>
+<div class="post flex-col">
+
+  <h2>Post #<%= @post.id %> by <%= @user.name %></h2>
+
+  <div class="post-stats align-end">
+    Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %>
+  </div>
+
+  <p><%= @post.text %></p>
+
+</div>
+
+<div class="comments">
+  <%= render partial: 'shared/comment', collection: @comments %>
+</div>
