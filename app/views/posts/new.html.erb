@@ -1,0 +1,12 @@
+<h2>Create Post</h2>
+<%= form_with url: posts_path, scope: :data do |form| %>
+	<div>
+		<%= form.label :title, "Title" %>
+		<%= form.text_field :title, placeholder: "Enter post title here", required: true %>
+	</div>
+	<div>
+    <%= form.label :title, "Text" %>
+		<%= form.text_area :text, placeholder: "Enter post text here", rows: 20, required: true %>
+	</div>
+	<%= form.submit "Publish" %>
+<% end %>
