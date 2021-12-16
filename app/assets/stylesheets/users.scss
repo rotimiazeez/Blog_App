@@ -1,3 +1,41 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.user-data {
+  height: 100px;
+  gap: 10px;
+  margin-bottom: 10px;
+
+  .user-photo {
+    width: 100px;
+    border: 1px solid black;
+
+    img {
+      width: 100px;
+    }
+  }
+
+  .user-info {
+    gap: 20px;
+    border: 1px solid black;
+    padding: 10px;
+  }
+}
+
+.user-bio {
+  gap: 10px;
+  margin-bottom: 10px;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.post {
+  gap: 10px;
+  border: 1px solid black;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.user-posts {
+  width: 100px;
+  margin: auto;
+  text-align: center;
+  border: 1px solid black;
+}

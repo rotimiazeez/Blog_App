@@ -1,1 +1,14 @@
-<h1>Here is the users.</h1>
+<%= render partial: 'user', object: @user %>
+
+<div class="user-bio flex-col">
+  <h3>Bio</h3>
+  <%= @user.bio %>
+</div>
+
+<% @posts.each do |post| %>
+  <%= render partial: 'posts/post', object: post %>
+<% end %>
+
+<div class="user-posts">
+  <%= link_to "See all posts", user_posts_path(@user.id)%>
+</div>

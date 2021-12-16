@@ -1,0 +1,13 @@
+<div class="user-data flex-row ">
+  <div class="user-photo">
+    <img src=<%= get_photo(user) %> alt="User photo" >
+  </div>
+  <div class="user-info flex-row">
+    <div class="user-name align-center">
+      <h2><%= user.name %></h2>
+    </div>
+    <div class="user-posts-counter align-end">
+      Number of posts: <%= user.posts_counter %>
+    </div>
+  </div>
+</div>
