@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:author_id])
+    @user = User.find(params[:user_id])
     @post = @user.posts.includes(:comments).find(params[:id])
     @comments = @post.comments.all.order('created_at')
   end
