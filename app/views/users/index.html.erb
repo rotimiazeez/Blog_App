@@ -1,5 +1,24 @@
+<% if user_signed_in? %>
+  Logged in as <strong><%= current_user.email %></strong>.
+  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to "Sign up", new_user_registration_path %> |
+  <%= link_to "Login", new_user_session_path %>
+<% end %>
 <% @users.each do |user| %>
-  <%= link_to user_path(user.id) do %>
-    <%= render partial: 'user', object: user %>
-  <% end %>
+  <article class = 'user-section'>
+    <div class  = 'user-image'>
+      <img src=<%= get_photo(user) %> alt="User photo" >
+    </div>
+
+    <div class = 'user-content'>
+      <div>
+        <h2><%= link_to user.name, user_path(user), class: 'user-name'%></h2>
+      </div>
+
+      <div>
+        <p class = 'post-num'>Number of posts:<%= user.posts.size %></p>
+      </div>
+    </div>
+  </article>
 <% end %>

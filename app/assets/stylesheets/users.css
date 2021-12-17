@@ -1,0 +1,67 @@
+.user-section {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 10px;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+.user-image {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 70px;
+  height: 60px;
+  border: 2px solid #000;
+}
+
+.user-content {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 10px;
+  height: 50px;
+  width: 70%;
+  margin-left: 15px;
+  padding-left: 20px;
+  border: 2px solid #000;
+}
+
+.user-name {
+  text-decoration: none;
+  color: #000;
+  font-size: 30px;
+}
+
+.post-num {
+  font-size: 15px;
+  margin-bottom: 3px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.user-bio {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 87%;
+  padding: 10px;
+  margin-left: 80px;
+  border: 2px solid black;
+}
+/*# sourceMappingURL=users.css.map */
