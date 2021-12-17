@@ -1,0 +1,111 @@
+.see-posts-button {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border: 2px solid #000;
+  text-decoration: none;
+  margin-top: 10px;
+  margin-left: 80px;
+  width: 15%;
+  height: 35px;
+  color: black;
+}
+
+.user-posts {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 87%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-left: 80px;
+  border: 2px solid black;
+}
+
+.comments {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 87%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-left: 80px;
+  border: 2px solid black;
+}
+
+.pagination {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border: 2px solid #000;
+  margin-top: 10px;
+  margin-left: 80px;
+  width: 15%;
+  height: 35px;
+}
+
+.pagination button {
+  border: none;
+  background-color: white;
+  font-size: 15px;
+}
+
+.show-posts {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 87%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-left: 80px;
+  border: 2px solid black;
+}
+
+.posts-header {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.input {
+  margin-bottom: 10px;
+}
+
+.new-post {
+  text-align: center;
+}
+
+.new-btn {
+  margin-top: 10px;
+}
+
+.link-comments {
+  color: #000;
+  font-size: 23px;
+}
+/*# sourceMappingURL=posts.css.map */

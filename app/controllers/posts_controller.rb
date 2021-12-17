@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @user = User.find(params[:user_id])
     @posts = @user.recent_posts
@@ -7,7 +9,7 @@ class PostsController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @post = @user.posts.includes(:comments).find(params[:id])
-    @comments = @post.comments.all.order('created_at')
+    @comments = @post.comments.all
   end
 
   def new
@@ -15,22 +17,29 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = current_user.posts.new(post_params)
+    @new_post = current_user.posts.new post_params
 
-    respond_to do |format|
-      format.html do
-        if post.save
-          redirect_to user_post_path(post.user.id, post.id)
-        else
-          flash.now[:alert] = 'Error: post not published'
-        end
-      end
+    if @new_post.save
+      redirect_to user_posts_path(@new_post.user.id), notice: 'Post successfully created!'
+    else
+      render :new
+    end
+  end
+
+  def destroy
+    post = Post.find params[:id]
+    user = post.user
+
+    if post.destroy
+      redirect_to user_path(user.id), notice: 'Post deleted!'
+    else
+      redirect_to user_path(user.id), alert: 'Failed to delete post!'
     end
   end
 
   private
 
   def post_params
-    params.require(:data).permit(:title, :text)
+    params.require(:post).permit(:title, :text)
   end
 end

@@ -1,12 +1,14 @@
-<h2>Create Post</h2>
-<%= form_with url: posts_path, scope: :data do |form| %>
-	<div>
-		<%= form.label :title, "Title" %>
-		<%= form.text_field :title, placeholder: "Enter post title here", required: true %>
-	</div>
-	<div>
-    <%= form.label :title, "Text" %>
-		<%= form.text_area :text, placeholder: "Enter post text here", rows: 20, required: true %>
-	</div>
-	<%= form.submit "Publish" %>
-<% end %>
+<div class = "new-post">
+  <%= form_with url: posts_path, model: @post do |form| %>
+    <h2>Create a post</h2>
+    <div>
+      <%= form.text_field :title, class: "input", size: "50x10", required: true, placeholder: "Post title", value: nil %>
+    </div>
+    <div>
+      <%= form.text_area :text, size: "70x30", required: true, placeholder: "Post content", value: nil %>
+    </div>
+    <div class = "new-btn">
+      <%= form.submit %>
+    </div>
+  <% end %>
+</div>

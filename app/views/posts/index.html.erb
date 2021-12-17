@@ -1,16 +1,29 @@
-<%= render partial: 'users/user', object: @user %>
+<section class = 'user-section'>
+  <div class  = 'user-image'>
+    <img src=<%= get_photo(@user) %> alt="User photo" >
+  </div>
+  <div class = 'user-content'>
+    <div>
+      <h2><%= @user.name %></h2>
+    </div>
+    <div>
+      <p class = 'post-num'>Number of posts:<%= @user.posts.size %></p>
+    </div>
+  </div>
+</section>
 
-<div class="post-comments">
-  <% @posts.each do |post| %>
-    <%= link_to user_post_path(@user.id, post.id) do %>
-      <%= render partial: 'post', object: post %>
-      <div class="comments">
-        <%= render partial: 'shared/comment', collection: post.recent_comments %>
-      </div>
+<% @posts.each do |post|%>
+  <div class = 'user-posts'>
+    
+    <%= render partial: "post_details", locals: { post: post } %>
+    
+    <% if post.comments.size > 0 %>
+      <%= render partial: "new_comment", locals: { comments: post.recent_comments } %>
     <% end %>
-  <% end %>
-</div>
 
-<div class="pagination">
-  <button>Pagination</button>
-</div> 
+  </div>
+<% end %>
+
+<div class = 'pagination'>
+  <button type="submit" >Pagination</button>
+</div>
