@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-names = ['Juan', 'Pekka', 'Luula', 'Aarnio', 'Aarto']
+names = ['Mateo', 'Hamsita', 'Nelsino', 'Carlosito', 'Leo']
 5.times do |i|
 	user = User.create(name: names[i], photo: "https://randomuser.me/api/portraits/men/jpg", bio: 'Lots of things to say in here')
 	3.times do |j|
