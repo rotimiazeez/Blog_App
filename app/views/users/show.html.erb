@@ -1,14 +1,26 @@
-<%= render partial: 'user', object: @user %>
+<%= link_to "Create a new post", new_post_path(@user.id), class: 'see-posts-button' %>
 
-<div class="user-bio flex-col">
-  <h3>Bio</h3>
-  <%= @user.bio %>
-</div>
+<section class = 'user-section'>
+  <div class = 'user-image'>
+    <img src=<%= get_photo(@user) %> alt="User photo" >
+  </div>
+  <div class = 'user-content'>
+    <div>
+      <h2><%= @user.name %></h2>
+    </div>
 
-<% @posts.each do |post| %>
-  <%= render partial: 'posts/post', object: post %>
+    <div>
+      <p class = 'post-num'>Number of posts:<%= @user.posts.size %></p>
+    </div>
+  </div>
+</section>
+
+<% if @user.bio.present? %>
+	<div class = 'user-bio'>
+    <h3>Bio</h3>
+    <p><%= @user.bio %></p>
+  </div>
 <% end %>
 
-<div class="user-posts">
-  <%= link_to "See all posts", user_posts_path(@user.id)%>
-</div>
+<%= render partial: 'posts/post', collection: @post %> 
+<%= link_to "See all post", user_posts_path(@user.id), class: 'see-posts-button' %>

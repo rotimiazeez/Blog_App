@@ -1,12 +1,17 @@
-<div class="post flex-col">
-    <div class="post-id">
-      <h3>Post #<%= post.id %></h3>
-    </div>
-    <div class="post-text">
-      <%= post.text %>
-    </div>
-    <div class="post-stats align-end">
-      Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>
-    </div>
-  </div> 
-  
+<div class = 'user-posts'>
+  <div>
+    <h3><%= link_to "Post ##{post.id} - #{post.title}" , user_post_path(@user.id, post.id), class: 'link-comments'%></h3> 
+    <%# delete %>
+    <% if can? :destroy, post %>
+      <div>
+        <%= button_to "Delete", post_path(post.id), data: { confirm: 'Are you sure you want to delete this post?' }, method: :delete %>
+      </div>
+    <% end %>  
+  </div>
+  <div>
+    <p><%= post.text %></p>
+    <p> <%= render partial: "posts/total_comments", locals: { total_comments: post.comments.size }%>, 
+      <%= render partial: "posts/total_likes", locals: { total_likes: post.likes.size } %>
+    </p>
+  </div>
+</div>

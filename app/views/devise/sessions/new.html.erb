@@ -1,0 +1,25 @@
+<div class = 'align-body'>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field input-field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", size: "70x10"%>
+  </div>
+
+  <div class="field input-field">
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", size: "70x10" %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field margin">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+
+  <div class="actions margin">
+    <%= f.submit "Log in", class: 'sign-in-button'%>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>

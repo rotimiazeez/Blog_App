@@ -1,21 +1,25 @@
-<div class="post flex-col">
-
-  <h2>Post #<%= @post.id %> by <%= @user.name %></h2>
-
-  <div class="post-stats align-end">
-    Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %>
+<div class = 'show-posts'>
+  <div class = 'posts-header'>
+    <div>
+      <h2>Post <%= @post.id %> by <%= @user.name%></h2>
+    </div>
+    <div>
+      <%= render partial: "posts/total_comments", locals: { total_comments: @post.comments.size } %>, 
+      <%= render partial: "posts/total_likes", locals: { total_likes: @post.likes.size } %>
+    </div>
   </div>
-
+  <%= render partial: "like_form", locals: { post: @post } %>
   <p><%= @post.text %></p>
-
-  <%= render partial: "new_like", post: @post %>
-
-  </div>
-
-<div class="new-comment">
-  <%= render partial: "new_comment", post: @post %>
 </div>
 
-<div class="comments">
-  <%= render partial: 'shared/comment', collection: @comments %>
+<div class = 'comments'>
+  <% if @post.comments.size > 0 %>
+    <%= render partial: "new_comment", locals: { comments: @post.comments } %>
+  <% end %>
 </div>
+
+<div class = "new-post">
+  <h3> Add a comment </h3>
+  <%= render partial: "comment_form", locals: { post: @post } %>
+</div>
+

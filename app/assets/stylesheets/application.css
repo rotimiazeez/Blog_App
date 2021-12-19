@@ -14,27 +14,7 @@
  *= require_self
  */
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-}
-
-.flex-row {
-  display: flex;
-  flex-direction: row;
-}
-
-.flex-col {
-  display: flex;
-  flex-direction: column;
-}
-
-.align-end {
-  align-self: flex-end;
-}
-
-.align-center {
-  align-self: center;
+body {
+  padding: 10px;
+  width: 70%;
 }

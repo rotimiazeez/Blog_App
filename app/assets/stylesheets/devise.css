@@ -1,0 +1,29 @@
+.input-field {
+  margin: 10px;
+  padding: 20px;
+}
+
+.align-body {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.margin {
+  margin: 20px;
+}
+
+.links {
+  font-size: 20px;
+  color: blue;
+}
+
+.sign-up {
+  font-size: 30px;
+}
+
+.sign-in-button {
+  border: 1px solid black;
+  text-align: center;
+  width: 53%;
+  background-color: white;
+}
