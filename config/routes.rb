@@ -14,4 +14,10 @@ Rails.application.routes.draw do
   end
 
   resources :comments, only: [:destroy]
+
+  namespace :api, defaults: { format: :json } do
+    resources :posts, only: [:index] do
+      resources :comments, only: [:create, :index]
+    end
+  end
 end

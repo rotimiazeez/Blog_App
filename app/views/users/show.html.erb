@@ -21,5 +21,6 @@
     <p><%= @user.bio %></p>
   </div>
 <% end %>
+
 <%= render partial: 'posts/post', collection: @post %> 
 <%= link_to "See all post", user_posts_path(@user.id), class: 'see-posts-button' %>

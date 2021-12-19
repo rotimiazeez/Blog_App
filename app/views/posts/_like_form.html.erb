@@ -1,5 +1,5 @@
 <div>
-  <% if post.likes.exists?(author_id: current_user.id) %>
+  <% if post.likes.exists?(user_id: current_user.id) %>
     <p> Post liked! </p>
   <% else %>
     <%= form_with url: post_likes_path(post.id) do |form| %>

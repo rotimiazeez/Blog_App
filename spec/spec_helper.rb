@@ -13,6 +13,7 @@
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+require 'capybara/rspec'
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
@@ -65,10 +66,6 @@ RSpec.configure do |config|
   #   #   - http://rspec.info/blog/2014/05/notable-changes-in-rspec-3/#zero-monkey-patching-mode
   #   config.disable_monkey_patching!
   #
-  #   # This setting enables warnings. It's recommended, but in some cases may
-  #   # be too noisy due to issues in dependencies.
-  #   config.warnings = true
-  #
   #   # Many RSpec users commonly either run the entire suite or an individual
   #   # file, and it's useful to allow more verbose output when running an
   #   # individual spec file.
@@ -95,4 +92,13 @@ RSpec.configure do |config|
   #   # test failures related to randomization by passing the same `--seed` value
   #   # as the one that triggered the failure.
   #   Kernel.srand config.seed
+
+  config.shared_context_metadata_behavior = :apply_to_host_groups
+  config.filter_run_when_matching :focus
+  config.example_status_persistence_file_path = 'spec/examples.txt'
+  config.disable_monkey_patching!
+  config.default_formatter = 'doc' if config.files_to_run.one?
+  config.order = :random
+  Kernel.srand config.seed
+  # config.profile_examples = 10
 end
