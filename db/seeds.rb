@@ -6,13 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
+names = ['Mateo', 'Hamsita', 'Nelsino', 'Carlosito', 'Leo']
 5.times do |i|
-	user = User.create(name: "User ##{i}", bio: "A bio.")
+	user = User.create(name: names[i], photo: "https://randomuser.me/api/portraits/men/jpg", bio: 'Lots of things to say in here')
 	3.times do |j|
-		post = Post.create(title: "Awesome Post", text: "Lorem Ipsum Dolor Amet", author_id: user.id)
-		5.times do |j|
-			Comment.create(text: "Comment ##{j}", post_id: post, author_id: user.id)
+		post = Post.create(user_id: user.id, title: 'The post1', text: 'This post tells lot of stuff in the form of, of course, a post.')
+		5.times do |k|
+			Comment.create(user_id: user.id, post_id: post.id, text: 'This comment belongs to the post above.')
 		end
 	end
 end

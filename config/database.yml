@@ -87,3 +87,4 @@ production:
   database: Blog_App_production
   username: Blog_App
   password: <%= ENV['BLOG_APP_DATABASE_PASSWORD'] %>
+  
